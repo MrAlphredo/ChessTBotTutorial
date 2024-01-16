@@ -15,3 +15,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[connection signal="gui_input" from="Filter" to="." method="_on_filter_gui_input"]

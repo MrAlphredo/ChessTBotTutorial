@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dux1xa8wfha83"]
+[gd_scene load_steps=6 format=3 uid="uid://dux1xa8wfha83"]
 
 [ext_resource type="Script" path="res://GUI.gd" id="1_ennpc"]
+[ext_resource type="Script" path="res://Bitboard.cs" id="2_flljv"]
+[ext_resource type="Script" path="res://DataHandlerCS.cs" id="3_ql8cq"]
+[ext_resource type="Script" path="res://GeneratePath.cs" id="4_tvb0l"]
+[ext_resource type="Script" path="res://chessbot.cs" id="5_4185t"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -52,4 +56,26 @@ offset_bottom = 89.0
 theme_override_font_sizes/font_size = 40
 text = "Test"
 
+[node name="Bitboard" type="Node" parent="."]
+script = ExtResource("2_flljv")
+
+[node name="DataHandlerCS" type="Node" parent="."]
+script = ExtResource("3_ql8cq")
+
+[node name="GeneratePath" type="Node" parent="."]
+script = ExtResource("4_tvb0l")
+
+[node name="chessbot" type="Node" parent="."]
+script = ExtResource("5_4185t")
+
+[node name="StartGameBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 168.0
+offset_right = 1030.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 40
+text = "Start Game"
+
 [connection signal="pressed" from="TestButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="StartGameBtn" to="." method="_on_start_game_btn_pressed"]

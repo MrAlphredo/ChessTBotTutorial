@@ -20,3 +20,5 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8q0cu")
+
+[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]
